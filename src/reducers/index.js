@@ -8,26 +8,15 @@
  *
  */
 
-const initialState = {
-  numOfCakes: 10,
-  numOfIcecream: 20
-};
+//create store only takes one reducers so need to combine reducer
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "BUY_CAKE":
-      return {
-        ...state,
-        numOfCakes: state.numOfCakes - 1
-      };
-    case "BUY_ICECREAM":
-      return {
-        ...state,
-        numOfIcecream: state.numOfIcecream - 1
-      };
-    default:
-      return state;
-  }
-};
+import cakeReducer from "./cakeReducer";
+import icecreamReducer from "./icecreamReducer";
+import { combineReducers } from "redux";
 
-export default reducer;
+const allReducers = combineReducers({
+  cake: cakeReducer,
+  iceCream: icecreamReducer
+});
+
+export default allReducers;
