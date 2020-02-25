@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore } from "redux";
 import reducer from "./reducers";
-import buyCake from "./action";
+import { buyCake, buyIcecream } from "./action";
 /**
  * Redux store
  * one store for the entire application
@@ -32,13 +32,19 @@ const unsubscribe = store.subscribe(
 //3. Allows state to be updated via dispatch(action)
 //buyCake() function is action creaters
 store.dispatch(buyCake()); //state updated
-console.log("First Dispatch", store.getState());
+console.log("First cake Dispatch", store.getState());
 
 store.dispatch(buyCake()); //state updated
-console.log("Second Dispatch", store.getState());
+console.log("Second cake Dispatch", store.getState());
 
 store.dispatch(buyCake()); //state updated
-console.log("Third Dispatch", store.getState());
+console.log("Third cake Dispatch", store.getState());
+
+store.dispatch(buyIcecream()); //state updated
+console.log("First icecream Dispatch", store.getState());
+
+store.dispatch(buyIcecream()); //state updated
+console.log("Second icecream Dispatch", store.getState());
 
 // 5- Handles unregistering of listeners via the function returned
 // by subscribe (listener)

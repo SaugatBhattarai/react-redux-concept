@@ -8,11 +8,16 @@
  * The 'type' property is typically defined as string constants
  */
 
-const buyCake = () => {
+export const buyCake = () => {
   return {
     type: "BUY_CAKE",
-    info: "My first redux app to create BUY CAKE."
+    info: "Buy cake action creater"
   };
 };
 
-export default buyCake;
+export const buyIcecream = () => {
+  return {
+    type: "BUY_ICECREAM",
+    info: "Buy Ice cream action creater"
+  };
+};

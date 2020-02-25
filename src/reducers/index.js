@@ -9,7 +9,8 @@
  */
 
 const initialState = {
-  numOfCakes: 10
+  numOfCakes: 10,
+  numOfIcecream: 20
 };
 
 const reducer = (state = initialState, action) => {
@@ -18,6 +19,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         numOfCakes: state.numOfCakes - 1
+      };
+    case "BUY_ICECREAM":
+      return {
+        ...state,
+        numOfIcecream: state.numOfIcecream - 1
       };
     default:
       return state;
