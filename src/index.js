@@ -112,7 +112,10 @@ const reducer = (state = initialState, action) => {
 
 /**
  * fetchUsers() is thunk
- * it wraps multiple actions
+ * it wraps multiple actions and return functions instead of object
+ * it does not have to be pure and can have side effects such as async api calls
+ * can also dispatch actions which receive dispatch methods as arguments
+ *
  */
 const fetchUsers = () => {
   return function(dispatch) {
